@@ -1,0 +1,5 @@
+.buttons {
+    display: flex;
+    flex: row;
+    justify-content: center;
+}
