@@ -29,7 +29,7 @@ export class Game extends React.Component {
     this.setState({ winningWord: pickRandomWord(listOfWords, 4, 10) });
     //Populate the correct guesses array with the right number of underscores
     //Done asynchronously to allow for this.state.winningWord to update first
-    //TODO #2 replace TimeOut with a better way to display empty letter slots ********************************************************************************************
+    //TODO #2 replace TimeOut with a better way to display empty letter slots
     setTimeout(() => {
       this.setState({
         lettersToGuess: populateUnderscores(this.state.winningWord),
@@ -48,13 +48,18 @@ export class Game extends React.Component {
 
   onGuess(letter) {
     //Check if the selected letter matches the winning word
-    if (letter === this.state.winningWord[this.state.correctGuesses]) {
+    if (this.state.winningWord.includes(letter)) {
       //Increment the correct guesses
       let newCount = this.state.correctGuesses + 1;
       this.setState({ correctGuesses: newCount });
       //Update the letters to display
-      let newLettersToGuess = this.state.lettersToGuess.slice();
-      newLettersToGuess[this.state.correctGuesses] = letter;
+      let newLettersToGuess = this.state.lettersToGuess.map((element, i) => {
+        if (this.state.winningWord[i] === letter) {
+          return letter;
+        } else {
+          return element;
+        }
+      });
       this.setState({ lettersToGuess: newLettersToGuess });
       //Check if the game is won:
       if (newCount === this.state.winningWord.length) {
@@ -62,13 +67,10 @@ export class Game extends React.Component {
         this.setState({ gameStatus: "won" });
       }
 
-      console.log("correct guess!");
-
       //If the selected letter doesn't match the winning word:
     } else {
       //Increment the correct guesses
       let newCount = this.state.incorrectGuesses + 1;
-
       this.setState({ incorrectGuesses: newCount });
 
       //Check if the game is lost:
@@ -78,17 +80,7 @@ export class Game extends React.Component {
         //Display what the word was:
         this.setState({ lettersToGuess: Array.from(this.state.winningWord) });
       }
-
-      console.log("incorrect guess!");
     }
-
-    //For testing:
-    console.log(`guess placed: ${letter}
-    winningWord: ${this.state.winningWord}
-    incorrectGuesses: ${this.state.incorrectGuesses}
-    correctGuesses: ${this.state.correctGuesses}
-    letters to guess: ${this.state.lettersToGuess}
-    game status: ${this.state.gameStatus}`);
   }
 
   //Helper function to determine display message based on game status
@@ -149,7 +141,7 @@ function populateUnderscores(word) {
   return underscores;
 }
 
-//************************************************************************************************************************************
+//******************************************************************************************
 //List of words to pick from. TODO #1 Replace this with all words in the provided dictionary
 const listOfWords = [
   "top",

@@ -1,18 +1,29 @@
-# Getting Started with Create React App
+# Hangman
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This is a React app that simulates the game "Hangman".
 
-## Available Scripts
+## How to install hangman
 
-In the project directory, you can run:
+- To play this game, clone the repository to your local computer.
+- Navigate to the directory where you saved the repository.
+- Inside the repository, start a terminal window.
+- Type `npm install` and wait for the process to run.
+- If you don't have npm installed, you can get it here: [https://nodejs.org/en/download/](https://nodejs.org/en/download/).
+- Now type `npm start` and wait for your browser to open a new window.
+  You should now be able to play Hangman!
 
-### `npm start`
+## How to play Hangman
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+When you click start, the computer will pick a random word and display the
+number of letters it contains. Your job is to guess which letters the word
+contains, until you can guess the entire word. You do this by entering a
+letter in the field below the image, and clicking 'Guess'. If the secret
+word contains your letter, it will show up in the corresponding place,
+allowing you to better guess the remaining letters. However if the secret
+word does not contain your letter, then the drawing of a hanging man is
+progressed with one step. You win if you guess all letters in the word
+correctly, and you lose if your incorrect guesses lead to the full man being
+hung. Press start to play!
 
 ### `npm test`
 
