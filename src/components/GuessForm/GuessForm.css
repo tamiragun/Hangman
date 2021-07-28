@@ -1,3 +1,15 @@
 .guess-form {
-    margin: 50px;
+  margin: 50px;
+}
+
+.form-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.submit-text {
+  margin: 0 10px 0 20px;
+  max-width: 100px;
 }

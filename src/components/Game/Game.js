@@ -1,5 +1,5 @@
 import React from "react";
-import { Button } from "../Button/Button.js";
+import { GameButton } from "../GameButton/GameButton.js";
 import { HangmanDisplay } from "../HangmanDisplay/HangmanDisplay.js";
 import { LetterDisplay } from "../LetterDisplay/LetterDisplay.js";
 import { GuessForm } from "../GuessForm/GuessForm.js";
@@ -104,14 +104,14 @@ export class Game extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className="game">
         <h1>Hangman</h1>
         <div className="buttons">
-          <Button
+          <GameButton
             name={this.state.gameStatus === "" ? "Start" : "Restart"}
             onClick={this.onStart}
           />
-          <Button
+          <GameButton
             name={this.state.displayHelp ? "Got it!" : "Help"}
             onClick={this.onHelp}
           />
@@ -151,7 +151,58 @@ function populateUnderscores(word) {
 
 //************************************************************************************************************************************
 //List of words to pick from. TODO #1 Replace this with all words in the provided dictionary
-const listOfWords = ["laptop", "wolf", "cowboy"];
+const listOfWords = [
+  "top",
+  "twin",
+  "union",
+  "export",
+  "sequence",
+  "trainer",
+  "articulate",
+  "seize",
+  "snuggle",
+  "work",
+  "even",
+  "pace",
+  "investment",
+  "temperature",
+  "document",
+  "spread",
+  "assumption",
+  "wagon",
+  "contain",
+  "talk",
+  "solid",
+  "language",
+  "perceive",
+  "donor",
+  "syndrome",
+  "restaurant",
+  "welcome",
+  "enlarge",
+  "bald",
+  "ward",
+  "timber",
+  "tower",
+  "elegant",
+  "other",
+  "see",
+  "implicit",
+  "deter",
+  "shaft",
+  "junior",
+  "belt",
+  "base",
+  "twilight",
+  "quantity",
+  "survival",
+  "tradition",
+  "liberty",
+  "discriminate",
+  "learn",
+  "shout",
+  "scream",
+];
 
 //Help description to explain the rules if the user needs help:
 const displayHelp = (

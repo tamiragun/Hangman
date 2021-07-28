@@ -51,7 +51,7 @@ export class HangmanDisplay extends React.Component {
     }
 
     return (
-      <div>
+      <div className="hangman-display">
         <img src={image} alt="Hangman" />
       </div>
     );
