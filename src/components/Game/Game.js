@@ -14,8 +14,10 @@ export class Game extends React.Component {
       correctGuesses: 0,
       lettersToGuess: [],
       gameStatus: "",
+      displayHelp: false,
     };
     this.onStart = this.onStart.bind(this);
+    this.onHelp = this.onHelp.bind(this);
     this.onGuess = this.onGuess.bind(this);
     this.displayGameStatus = this.displayGameStatus.bind(this);
   }
@@ -27,7 +29,7 @@ export class Game extends React.Component {
     this.setState({ winningWord: pickRandomWord(listOfWords, 4, 10) });
     //Populate the correct guesses array with the right number of underscores
     //Done asynchronously to allow for this.state.winningWord to update first
-    //FIND BETTER WAY TO DO THIS ********************************************************************************************
+    //TODO #2 replace TimeOut with a better way to display empty letter slots ********************************************************************************************
     setTimeout(() => {
       this.setState({
         lettersToGuess: populateUnderscores(this.state.winningWord),
@@ -35,6 +37,13 @@ export class Game extends React.Component {
     }, 500);
     //(Re)set guesses to zero at start of game
     this.setState({ incorrectGuesses: 0, correctGuesses: 0 });
+  }
+
+  onHelp() {
+    //Toggle the help status when the button is clicked
+    this.setState((prevState) => ({
+      displayHelp: !prevState.displayHelp,
+    }));
   }
 
   onGuess(letter) {
@@ -102,8 +111,12 @@ export class Game extends React.Component {
             name={this.state.gameStatus === "" ? "Start" : "Restart"}
             onClick={this.onStart}
           />
-          <Button name="Help" />
+          <Button
+            name={this.state.displayHelp ? "Got it!" : "Help"}
+            onClick={this.onHelp}
+          />
         </div>
+        <div>{this.state.displayHelp && displayHelp}</div>
         <HangmanDisplay incorrectGuesses={this.state.incorrectGuesses} />
         <LetterDisplay lettersToGuess={this.state.lettersToGuess} />
         {this.displayGameStatus()}
@@ -136,6 +149,22 @@ function populateUnderscores(word) {
   return underscores;
 }
 
-//***********************************************************************************************************************************$ */
-//List of words to pick from. REPLACE THIS WITH PARSED DICTIONARY
+//************************************************************************************************************************************
+//List of words to pick from. TODO #1 Replace this with all words in the provided dictionary
 const listOfWords = ["laptop", "wolf", "cowboy"];
+
+//Help description to explain the rules if the user needs help:
+const displayHelp = (
+  <p>
+    When you click start, the computer will pick a random word and display the
+    number of letters it contains. Your job is to guess which letters the word
+    contains, until you can guess the entire word. You do this by entering a
+    letter in the field below the image, and clicking 'Guess'. If the secret
+    word contains your letter, it will show up in the corresponding place,
+    allowing you to better guess the remaining letters. However if the secret
+    word does not contain your letter, then the drawing of a hanging man is
+    progressed with one step. You win if you guess all letters in the word
+    correctly, and you lose if your incorrect guesses lead to the full man being
+    hung. Press start to play!
+  </p>
+);
