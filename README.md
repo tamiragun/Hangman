@@ -10,72 +10,28 @@ This is a React app that simulates the game "Hangman".
 - Type `npm install` and wait for the process to run.
 - If you don't have npm installed, you can get it here: [https://nodejs.org/en/download/](https://nodejs.org/en/download/).
 - Now type `npm start` and wait for your browser to open a new window.
-  You should now be able to play Hangman!
+- You should now be able to play Hangman!
 
 ## How to play Hangman
 
-When you click start, the computer will pick a random word and display the
-number of letters it contains. Your job is to guess which letters the word
-contains, until you can guess the entire word. You do this by entering a
-letter in the field below the image, and clicking 'Guess'. If the secret
-word contains your letter, it will show up in the corresponding place,
-allowing you to better guess the remaining letters. However if the secret
-word does not contain your letter, then the drawing of a hanging man is
-progressed with one step. You win if you guess all letters in the word
-correctly, and you lose if your incorrect guesses lead to the full man being
-hung. Press start to play!
+When you click start, the computer will pick a random word and display the number of letters it contains. Your job is to guess which letters the word contains, until you can guess the entire word. You do this by entering a letter in the field below the image, and clicking 'Guess'.
+If the secret word contains your letter, it will show up in the corresponding place, allowing you to better guess the remaining letters. However if the secret word does not contain your letter, then the drawing of a hanging man is progressed with one step. You win if you guess all letters in the word correctly, and you lose if your incorrect guesses lead to the full man being hung.
 
-### `npm test`
+## About this Hangman
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+This programme was built with React and React-Bootstrap. It is a capstone project for the HyperionDev immersive full-stack web development and software engineering bootcamp. The requirements were as follows:
 
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+1. It should be created using Create React App.
+2. It should include attractively styled components (at least 4 different types of components) that respond to user interaction. Feel free to use React-Bootstrap or another library and/or your own custom stylesheets.
+3. A number of components should be rendered using the array.Map() method. Each component rendered in this way should have a key that uniquely identifies it.
+4. User interaction should modify the state of some components.
+5. The state of two or more components should be synced.
+6. The user should be able to restart the game.
+7. The user should be clearly informed if they have “won” or “lost” the game.
+8. The user should easily be able to request “help” that will inform the user about the rules of the game from the UI.
+9. The UI should be attractive, easy to use and intuitive.
+10. It should include a file called “readme.md” which explains the rules of the game. This file should also provide clear instructions that an end user will be
+    able to follow to be able to install and run your app on their local machine.
+11. Your mentor should be able to launch your app by typing ‘npm start’ from the command line interface.
+12. The file structure of the project should be well organized in line with guidelines here . The code should also be easy to read adhering to Google’s style guide about indentation, meaningful variable and component names etc.
+13. Your code should be well documented with appropriate comments.
