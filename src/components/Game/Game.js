@@ -3,6 +3,7 @@ import { GameButton } from "../GameButton/GameButton.js";
 import { HangmanDisplay } from "../HangmanDisplay/HangmanDisplay.js";
 import { LetterDisplay } from "../LetterDisplay/LetterDisplay.js";
 import { GuessForm } from "../GuessForm/GuessForm.js";
+import { HelpBlurb } from "../HelpBlurb/HelpBlurb.js";
 import "./Game.css";
 
 export class Game extends React.Component {
@@ -105,10 +106,13 @@ export class Game extends React.Component {
           />
           <GameButton
             name={this.state.displayHelp ? "Got it!" : "Help"}
+            displayHelp={this.state.displayHelp}
             onClick={this.onHelp}
           />
         </div>
-        <div>{this.state.displayHelp && displayHelp}</div>
+        <div>
+          <HelpBlurb displayHelp={this.state.displayHelp} />
+        </div>
         <HangmanDisplay incorrectGuesses={this.state.incorrectGuesses} />
         <LetterDisplay lettersToGuess={this.state.lettersToGuess} />
         {this.displayGameStatus()}
