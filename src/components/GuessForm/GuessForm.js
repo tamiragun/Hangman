@@ -4,9 +4,6 @@ import React from "react";
 import "./GuessForm.css";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
-import Col from "react-bootstrap/Col";
-import Row from "react-bootstrap/Row";
-import FormControl from "react-bootstrap/FormControl";
 
 export class GuessForm extends React.Component {
   constructor(props) {
