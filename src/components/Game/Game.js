@@ -3,7 +3,6 @@ import { GameButton } from "../GameButton/GameButton.js";
 import { HangmanDisplay } from "../HangmanDisplay/HangmanDisplay.js";
 import { LetterDisplay } from "../LetterDisplay/LetterDisplay.js";
 import { GuessForm } from "../GuessForm/GuessForm.js";
-import { HelpBlurb } from "../HelpBlurb/HelpBlurb.js";
 import "./Game.css";
 
 export class Game extends React.Component {
