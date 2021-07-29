@@ -106,13 +106,10 @@ export class Game extends React.Component {
           />
           <GameButton
             name={this.state.displayHelp ? "Got it!" : "Help"}
-            displayHelp={this.state.displayHelp}
             onClick={this.onHelp}
           />
         </div>
-        <div>
-          <HelpBlurb displayHelp={this.state.displayHelp} />
-        </div>
+        <div>{this.state.displayHelp && displayHelp}</div>
         <HangmanDisplay incorrectGuesses={this.state.incorrectGuesses} />
         <LetterDisplay lettersToGuess={this.state.lettersToGuess} />
         {this.displayGameStatus()}
