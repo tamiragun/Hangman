@@ -22,19 +22,16 @@ export class Game extends React.Component {
     this.displayGameStatus = this.displayGameStatus.bind(this);
   }
 
-  onStart() {
+  async onStart() {
     //Set game status to "ongoing"
     this.setState({ gameStatus: "ongoing" });
     //Pick a random winning word
-    this.setState({ winningWord: pickRandomWord(listOfWords, 4, 10) });
+    await this.setState({ winningWord: pickRandomWord(listOfWords, 4, 10) });
     //Populate the correct guesses array with the right number of underscores
     //Done asynchronously to allow for this.state.winningWord to update first
-    //TODO #2 replace TimeOut with a better way to display empty letter slots
-    setTimeout(() => {
-      this.setState({
-        lettersToGuess: populateUnderscores(this.state.winningWord),
-      });
-    }, 500);
+    this.setState({
+      lettersToGuess: populateUnderscores(this.state.winningWord),
+    });
     //(Re)set guesses to zero at start of game
     this.setState({ incorrectGuesses: 0, correctGuesses: 0 });
   }
