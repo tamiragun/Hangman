@@ -1,25 +1,12 @@
 # Hangman
 
-This is a React app that simulates the game "Hangman".
+This was an assignment for the React portion of my coding bootcamp. It is a React app that simulates the game "Hangman".
 
-## How to install hangman
+**Stack used**: JavaScript - React - CSS - React-Bootstrap - Heroku
 
-- To play this game, clone the repository to your local computer.
-- Navigate to the directory where you saved the repository.
-- Inside the repository, start a terminal window.
-- Type `npm install` and wait for the process to run.
-- If you don't have npm installed, you can get it here: [https://nodejs.org/en/download/](https://nodejs.org/en/download/).
-- Now type `npm start` and wait for your browser to open a new window.
-- You should now be able to play Hangman!
+## The brief
 
-## How to play Hangman
-
-When you click start, the computer will pick a random word and display the number of letters it contains. Your job is to guess which letters the word contains, until you can guess the entire word. You do this by entering a letter in the field below the image, and clicking 'Guess'.
-If the secret word contains your letter, it will show up in the corresponding place, allowing you to better guess the remaining letters. However if the secret word does not contain your letter, then the drawing of a hanging man is progressed with one step. You win if you guess all letters in the word correctly, and you lose if your incorrect guesses lead to the full man being hung.
-
-## About this Hangman
-
-This programme was built with React and React-Bootstrap. It is a capstone project for the HyperionDev immersive full-stack web development and software engineering bootcamp. The requirements were as follows:
+These were the detailed instructions for the assignment:
 
 1. It should be created using Create React App.
 2. It should include attractively styled components (at least 4 different types of components) that respond to user interaction. Feel free to use React-Bootstrap or another library and/or your own custom stylesheets.
@@ -35,3 +22,23 @@ This programme was built with React and React-Bootstrap. It is a capstone projec
 11. Your mentor should be able to launch your app by typing ‘npm start’ from the command line interface.
 12. The file structure of the project should be well organized in line with guidelines here . The code should also be easy to read adhering to Google’s style guide about indentation, meaningful variable and component names etc.
 13. Your code should be well documented with appropriate comments.
+
+## How to play Hangman
+
+Go to the app here: https://tamiragun-hangman.herokuapp.com/
+
+When you click start, the computer will pick a random word and display the number of letters it contains. Your job is to guess which letters the word contains, until you can guess the entire word. You do this by entering a letter in the field below the image, and clicking 'Guess'.
+
+If the secret word contains your letter, it will show up in the corresponding place, allowing you to better guess the remaining letters. However if the secret word does not contain your letter, then the drawing of a hanging man is progressed with one step. You win if you guess all letters in the word correctly, and you lose if your incorrect guesses lead to the full man being hung.
+
+## How to install this project
+
+If you want to play around with the code yourself, you can do so by following these steps:
+
+- To play this game, clone the repository to your local computer.
+- Navigate to the directory where you saved the repository.
+- Inside the repository, start a terminal window.
+- Type `npm install` and wait for the process to run.
+- If you don't have npm installed, you can get it here: [https://nodejs.org/en/download/](https://nodejs.org/en/download/).
+- Now type `npm start` and wait for your browser to open a new window.
+- You should now be able to play Hangman!
